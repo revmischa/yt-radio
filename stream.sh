@@ -41,8 +41,8 @@ channels=2
 framerate='30/1'
 vbitrate=4000
 abitrate=320000
-#GST_DEBUG="--gst-debug=flvmux:4,rtmpsink:4"
-GST_DEBUG="--gst-debug=1"
+GST_DEBUG="--gst-debug=flvmux:4,rtmpsink:4"
+# GST_DEBUG="--gst-debug=1"
 ###################### Settings ########################
 ########################################################
 # THe following settings should not be changed
