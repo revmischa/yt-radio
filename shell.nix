@@ -3,9 +3,8 @@
 
 pkgs.mkShell {
   buildInputs = [
-
-    pkgs.libsoup_3
     pkgs.libsoup
+    pkgs.glib-networking
 
     pkgs.gst_all_1.gstreamer
     pkgs.gst_all_1.gst-plugins-base
@@ -15,6 +14,8 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    		bash stream.sh you
-    	'';
+        		export LD_LIBRARY_PATH="${pkgs.libsoup.out}/lib:${pkgs.glib-networking.out}/lib"
+    				export GIO_EXTRA_MODULES="${pkgs.glib-networking.out}/lib/gio/modules"
+        		bash stream.sh you
+        					'';
 }

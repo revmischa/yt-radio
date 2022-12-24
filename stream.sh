@@ -127,7 +127,7 @@ VIDEOFORMAT=$VIDEO', framerate='$framerate', width='$width', height='$height
 AUDIOFORMAT=$AUDIO', '$afid' endianness=(int)1234, signed=(boolean)true, width=(int)16, depth=(int)16, rate=(int)'$audiorate', channels=(int)'$channels
 TIMEOLPARMS='halignment=left valignment=bottom text="" shaded-background=true'
 VIDEOSRC="videotestsrc pattern=pinwheel is-live=true ! timeoverlay $TIMEOLPARMS"
-AUDIOSRC="souphttpsrc location=https://radio.llolo.lol/listen.mp3 ! queue ! mpegaudioparse"
+AUDIOSRC="souphttpsrc location=https://radio.llolo.lol/listen.mp3 ! icydemux ! mpegaudioparse"
 # AUDIOSRC="uridecodebin uri=https://radio.llolo.lol/listen.mp3"
 
 set -x
